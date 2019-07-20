@@ -1,6 +1,20 @@
-<%= form_tag '/media_contents', method: :post, :class => "dropzone", id: "media-dropzone" do %>
-  <div class="fallback">
-    <%= file_field_tag "media", multiple: true%>
+<br>
+<div class="container mt-4">
+  <div class="card mt-4">
+    <div class="card-header">
+      New Video
+    </div>
+    <div class="card-body">
+      <%= form_tag '/media_contents', method: :post, class: "dropzone", id: "media-dropzone" do %>
+        <div class="fallback">
+          <%= file_field_tag "media", multiple: true%>
+        </div>
+          <%= submit_tag "Submit", class: "btn btn-outline-secondary btn-sm float-right" %>
+      <% end %>
+    </div>
   </div>
-  <%= submit_tag "Submit"%>
-<% end %>
+</div>
+
+
+
+
