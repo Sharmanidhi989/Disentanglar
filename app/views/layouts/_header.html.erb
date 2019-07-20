@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark pmd-navbar pmd-z-depth fixed-top">
+  <a class='navi navbar-brand' href="<%= root_url %>">dIsEnTaNgLeR</a>
+  <div class="dropdown pmd-dropdown pmd-user-info ml-auto">
+    <a href="javascript:void(0);" class="btn-user  media align-items-center" data-toggle="dropdown" data-sidebar="true" aria-expanded="false">
+        <a class="nav-link" id="navbarDropdownMenuLink-55" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        <button type="button" class="btn btn-outline-light text-secondary">Menu</button>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+      <% if user_signed_in? %>
+        <%= link_to('Settings', edit_user_registration_path, class: "dropdown-item")%>
+        <%= link_to 'Logout' , destroy_user_session_path, method: :delete , class: "dropdown-item" %>
+      <% else %>
+        <%= link_to 'Login', new_user_session_path, class: "dropdown-item" %>  
+      <% end %>
+    </ul>
+  </div>
+</nav>
